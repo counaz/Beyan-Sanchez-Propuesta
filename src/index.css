@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #080a0f;
+    color: #e2e8f0;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-mono-num {
+  font-family: 'Space Grotesk', monospace, sans-serif;
+}
+
+/* Custom Gold and Dark gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFE29F 0%, #FFAE34 50%, #ED8936 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-border {
+  border-image: linear-gradient(to bottom right, #f59e0b, #d97706, #78350f) 1;
+}
+
+.gold-radial-glow {
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(8, 10, 15, 0) 70%);
+}
+
+.candlestick-glow {
+  background: radial-gradient(ellipse at top, rgba(234, 179, 8, 0.12) 0%, rgba(8, 10, 15, 0) 60%);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(15, 18, 26, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 158, 11, 0.18);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(245, 158, 11, 0.45);
+  box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.2);
+}
+
