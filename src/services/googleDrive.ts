@@ -12,11 +12,20 @@ export const SCOPES = [
   'https://www.googleapis.com/auth/drive.file'
 ];
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+let app: any = null;
+export let auth: any = null;
+let provider: any = null;
 
-const provider = new GoogleAuthProvider();
-provider.addScope('https://www.googleapis.com/auth/drive.file');
+try {
+  if (firebaseConfig && (firebaseConfig as any).apiKey) {
+    app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    provider = new GoogleAuthProvider();
+    provider.addScope('https://www.googleapis.com/auth/drive.file');
+  }
+} catch (err) {
+  console.warn('Firebase initialization notice:', err);
+}
 
 // In-memory access token cache
 let isSigningIn = false;
@@ -26,6 +35,11 @@ export const initAuth = (
   onAuthSuccess?: (user: User, token: string) => void,
   onAuthFailure?: () => void
 ) => {
+  if (!auth) {
+    if (onAuthFailure) onAuthFailure();
+    return () => {};
+  }
+
   return onAuthStateChanged(auth, async (user: User | null) => {
     if (user) {
       if (cachedAccessToken) {
@@ -43,6 +57,10 @@ export const initAuth = (
 };
 
 export const googleSignIn = async (): Promise<{ user: User; accessToken: string } | null> => {
+  if (!auth || !provider) {
+    throw new Error('Servicio de Google Auth no inicializado en este dominio.');
+  }
+
   try {
     isSigningIn = true;
     const result = await signInWithPopup(auth, provider);
@@ -66,7 +84,9 @@ export const getAccessToken = async (): Promise<string | null> => {
 };
 
 export const logout = async () => {
-  await auth.signOut();
+  if (auth) {
+    await auth.signOut();
+  }
   cachedAccessToken = null;
 };
 
