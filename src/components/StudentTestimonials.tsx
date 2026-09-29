@@ -52,7 +52,7 @@ export const StudentTestimonials: React.FC<StudentTestimonialsProps> = ({
         </div>
 
         {/* Featured Card: FundingPips Challenge Passed in 1 Day */}
-        <div className="max-w-5xl mx-auto mb-12 sm:mb-16">
+        <div className="max-w-6xl mx-auto mb-12 sm:mb-16">
           <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#121824] via-[#0d131f] to-[#090e17] border-2 border-emerald-500/50 p-5 sm:p-8 shadow-2xl relative overflow-hidden">
             <div className="sm:absolute sm:top-6 sm:right-6 mb-3 sm:mb-0 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] sm:text-xs font-bold uppercase">
               <Award className="w-3.5 h-3.5 text-emerald-400" />
