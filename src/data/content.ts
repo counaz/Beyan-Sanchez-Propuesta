@@ -1,3 +1,9 @@
+export const BRYAN_WHATSAPP_NUMBER = '56957082496';
+
+export const getWhatsAppUrl = (message: string) => {
+  return `https://wa.me/${BRYAN_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+};
+
 export interface Plan {
   id: string;
   name: string;
@@ -10,242 +16,276 @@ export interface Plan {
   exclusiveBonus?: string[];
   ctaText: string;
   description: string;
+  spotsLeft?: number;
 }
 
 export const TRADING_PLANS: Plan[] = [
   {
     id: 'mensual',
-    name: 'PLAN 1: MENSUAL',
-    duration: '1 Mes',
-    classesCount: 'Total: 8 clases al mes (2 por semana)',
+    name: 'PLAN MENSUAL',
+    duration: '1 Mes Contigo',
+    classesCount: '8 clases privadas 1 a 1 conmigo (2 por semana)',
     priceUSD: 399,
-    description: 'Ideal para corregir vicios operativos inmediatos, estructurar tu gestión y empezar a operar con disciplina profesional.',
+    spotsLeft: 2,
+    description: 'Trabajamos mano a mano para eliminar tus vicios emocionales, ordenar tu vida y aplicar mi estrategia de ratio 1:5 con disciplina innegociable.',
     features: [
-      'Total: 8 clases 1 a 1 al mes',
-      'Acompañamiento directo por WhatsApp',
-      'Resolución de dudas entre clases',
-      'Trading + Desarrollo Personal integral',
-      'Grabaciones completas de tus sesiones privadas',
-      'Auditoría y feedback de tus entradas'
+      '8 sesiones individuales y privadas en vivo conmigo',
+      'Mi WhatsApp personal para resolver tus dudas a diario',
+      'Auditoría y corrección de tus trades antes de operar',
+      '50% Desarrollo Personal + 50% Trading de Precisión',
+      'Grabaciones completas de cada clase para repasar',
+      'Estructuración de tu rutina matutina y guion operativo'
     ],
-    ctaText: 'Postular a Plan Mensual'
+    ctaText: 'Postular conmigo (Solo 2 Cupos)'
   },
   {
     id: 'bimensual',
-    name: 'PLAN 2: BIMENSUAL',
-    badge: 'MÁS RECOMENDADO',
-    duration: '2 Meses',
-    classesCount: 'Total: 16 clases en 2 meses',
+    name: 'PLAN BIMENSUAL',
+    badge: 'EL MÁS ELEGIDO',
+    duration: '2 Meses Contigo',
+    classesCount: '16 clases privadas 1 a 1 conmigo',
     priceUSD: 569,
     highlighted: true,
-    description: 'El programa más elegido para consolidar tu método, dominar tus emociones bajo presión y ver resultados consistentes.',
+    spotsLeft: 2,
+    description: 'Mi programa más profundo para transformar tu identidad: reprogramamos tu mente bajo presión, pulimos tu método y logramos consistencia real.',
     features: [
-      'Total: 16 clases en 2 meses',
-      'Acompañamiento directo prioritario por WhatsApp',
-      'Resolución de dudas continua entre clases',
-      'Trading + Desarrollo Personal avanzado',
-      'Acceso a material exclusivo y sesiones especiales',
-      'Diseño de Plan de Trading adaptado a tu estilo',
-      'Bitácora personalizada de psicotrading'
+      '16 sesiones individuales en vivo directamente conmigo',
+      'Acompañamiento prioritario continuo por mi WhatsApp personal',
+      'Auditoría diaria de tu psicología y tus entradas al mercado',
+      'Reprogramación de creencias sobre el dinero y la abundancia',
+      'Diseño personalizado de tu Guion de Vida y Plan de Trading',
+      'Estrategia de psicotrading adaptada a tu personalidad',
+      'Acceso directo para siempre a mis actualizaciones'
     ],
     exclusiveBonus: [
-      'Acceso a material exclusivo y sesiones especiales',
-      'Ahorras $229 USD comparado con mes individual'
+      'Ahorras $229 USD respecto al mes individual',
+      'Acceso a mis sesiones maestras privadas'
     ],
-    ctaText: 'Postular a Plan Bimensual'
+    ctaText: 'Postular conmigo (Solo 2 Cupos)'
   },
   {
     id: 'trimestral',
-    name: 'PLAN 3: TRIMESTRAL',
+    name: 'PLAN TRIMESTRAL',
     badge: 'TRANSFORMACIÓN TOTAL',
-    duration: '3 Meses',
-    classesCount: 'Total: 24 clases en 3 meses',
+    duration: '3 Meses Contigo',
+    classesCount: '24 clases privadas 1 a 1 conmigo',
     priceUSD: 859,
-    description: 'Mentoría de inmersión total para formar traders profesionales listos para gestionar capital privado y pasar pruebas de fondeo.',
+    spotsLeft: 2,
+    description: 'Inmersión total de 90 días. Te formo como trader profesional y como persona de alto rendimiento lista para gestionar cuentas fondeadas de capital privado.',
     features: [
-      'Total: 24 clases en 3 meses',
-      'Acompañamiento directo 24/7 por WhatsApp',
-      'Resolución de dudas y revisión operativa diaria',
-      'Trading + Desarrollo Personal de alto rendimiento',
-      'Acceso vitalicio a material exclusivo y sesiones especiales',
-      'Estrategia de fondeo de cuentas (Prop Firms)',
-      'Psicotrading intensivo y reprogramación de hábitos'
+      '24 sesiones individuales privadas mano a mano conmigo',
+      'Acompañamiento 24/7 en mi WhatsApp personal',
+      'Estrategia paso a paso para pasar pruebas de fondeo (Prop Firms)',
+      'Trading institucional con ratio asimétrico 1:5',
+      'Reprogramación profunda de hábitos y mentalidad inquebrantable',
+      'Revisión en vivo de tu psicología y toma de decisiones',
+      'Vínculo y contacto cercano conmigo de por vida'
     ],
     exclusiveBonus: [
-      'Acompañamiento intensivo para pruebas de fondeo',
-      'Acceso total a biblioteca de sesiones maestras'
+      'Acompañamiento intensivo para superar tu cuenta fondeada',
+      'Acceso vitalicio a todas mis mentorías grupales futuras'
     ],
-    ctaText: 'Postular a Plan Trimestral'
+    ctaText: 'Postular conmigo (Solo 2 Cupos)'
   }
 ];
 
 export const CORE_PILLARS = [
   {
-    icon: 'TrendingUp',
-    title: 'TRADING',
-    subtitle: 'Estrategias probadas y gestión de riesgo.',
-    description: 'Métodos claros y comprobados en mercados reales. Aprenderás a identificar ventajas estadísticas reales sin indicadores saturados.'
+    icon: 'Brain',
+    title: 'DESARROLLO PERSONAL & MENTALIDAD',
+    subtitle: 'El trader gana primero fuera del gráfico.',
+    description: 'El trading es 80% psicología y estado de consciencia. Trabajamos tus creencias, tu relación con el dinero, la fe, la gratitud y la capacidad de actuar con serenidad bajo presión.'
   },
   {
-    icon: 'Brain',
-    title: 'DESARROLLO PERSONAL',
-    subtitle: 'Reprograma tu mente y eleva tu enfoque para ser élite.',
-    description: 'El trading es 80% psicología y disciplina. Trabajamos tus creencias sobre el dinero, la paciencia y el autocontrol emocional.'
+    icon: 'TrendingUp',
+    title: 'TRADING DE PRECISIÓN (RATIO 1:5)',
+    subtitle: 'Matemática y liquidez a tu favor, sin humo.',
+    description: 'Basta de saturar tu pantalla con 10 indicadores inútiles. Te enseño a leer la intención del mercado y a entrar únicamente cuando el beneficio potencial quintuplica tu riesgo medido.'
   },
   {
     icon: 'Target',
-    title: 'ENFOQUE',
-    subtitle: 'Claridad, disciplina y constancia diaria.',
-    description: 'Elimina el ruido y el FOMO. Creas una rutina estricta de pre-mercado y ejecución que convierte la consistencia en un hábito.'
+    title: 'HÁBITOS & GUION DE VIDA',
+    subtitle: 'Acciona como la persona que quieres llegar a ser.',
+    description: 'No te validas por un resultado temporal. Construyes una rutina pre-mercado innegociable, ordenas tu entorno y ejecutas con frialdad profesional eliminando el FOMO.'
   },
   {
     icon: 'Award',
-    title: 'RESULTADOS',
-    subtitle: 'Construye un proceso rentable paso a paso.',
-    description: 'No buscamos golpes de suerte. Construimos un sistema replicable con gestión asimétrica de riesgo para proteger y multiplicar tu capital.'
+    title: 'LIBERTAD & TRANSFORMACIÓN REAL',
+    subtitle: 'Más vida para todos y menos para ninguna.',
+    description: 'El dinero es solo un vehículo para comprar tiempo y paz mental con tu familia. Buscamos un proceso sostenible que te dé libertad duradera, no un golpe de suerte pasajero.'
   }
 ];
 
 export const METHOD_FEATURES = [
   {
-    title: 'ESTRATEGIAS PROBADAS',
-    description: 'Métodos claros y efectivos probados en mercados reales y diferentes condiciones de volatilidad.'
+    title: 'DESARROLLO PERSONAL DIARIO',
+    description: 'Reprogramación mental, hábitos de élite y lectura profunda para elevar tu frecuencia y actuar con convicción.'
   },
   {
-    title: 'GESTIÓN DEL RIESGO',
-    description: 'Aprende a proteger tu capital matemáticamente y crecer con inteligencia sin arriesgar tu cuenta.'
+    title: 'TRADING OBJETIVO RATIO 1:5',
+    description: 'Estrategia basada en liquidez y estructura limpia sin indicadores mágicos ni falsas promesas.'
   },
   {
-    title: 'AUTODISCIPLINA Y ENFOQUE',
-    description: 'Disciplina tu cuerpo y tu mente para ejecutar tu plan sin emoción, sin ansiedad y sin sobreoperar.'
+    title: 'GESTIÓN MATEMÁTICA DEL RIESGO',
+    description: 'Protege tu capital pase lo que pase; una racha de pérdidas jamás destruirá tu cuenta ni tu paz mental.'
   },
   {
-    title: 'DESARROLLO CONTINUO',
-    description: 'Mejora constante y mentalidad de élite en cada clase individual con Bryan Sánchez.'
+    title: 'ACOMPAÑAMIENTO CONMIGO 1 A 1',
+    description: 'Hablas directamente conmigo por WhatsApp para resolver dudas y corregir tus análisis antes de arriesgar dinero.'
   }
 ];
 
 export const TEST_QUESTIONS = [
   {
     id: 1,
-    question: '¿Qué haces cuando una operación toca tu Stop Loss?',
+    question: '¿Qué sientes y haces cuando una operación toca tu Stop Loss?',
     options: [
-      { text: 'Acepto la pérdida calculada, registro la entrada y no busco revancha.', score: 3 },
-      { text: 'Siento frustración y a veces abro otra operación inmediata para recuperar.', score: 1 },
-      { text: 'Muevo el Stop Loss más lejos para evitar que se cierre en negativo.', score: 0 }
+      { text: 'Acepto la pérdida calculada con calma, la registro y no busco revancha.', score: 3 },
+      { text: 'Siento frustración o enojo, y a veces busco otra operación rápida para recuperar.', score: 1 },
+      { text: 'Muevo el Stop Loss más lejos para evitar aceptar que me equivoqué.', score: 0 }
     ]
   },
   {
     id: 2,
-    question: '¿Tienes un plan de trading escrito con reglas claras antes de abrir el gráfico?',
+    question: '¿Tienes un plan de trading y una rutina de vida claros antes de sentarte a operar?',
     options: [
-      { text: 'Sí, tengo reglas estrictas de entrada, salida y riesgo máximo por día.', score: 3 },
-      { text: 'Tengo una idea en la cabeza, pero no siempre la sigo al pie de la letra.', score: 1 },
-      { text: 'No, opero según lo que siento o las señales que veo en el momento.', score: 0 }
+      { text: 'Sí, sigo una rutina de calma y tengo reglas escritas de entrada y riesgo.', score: 3 },
+      { text: 'Tengo ideas en la cabeza, pero suelo improvisar según la emoción del momento.', score: 1 },
+      { text: 'No, opero según lo que siento o las señales que veo en redes.', score: 0 }
     ]
   },
   {
     id: 3,
-    question: '¿Qué porcentaje de tu cuenta arriesgas en una sola operación?',
+    question: '¿Qué porcentaje de tu capital arriesgas en una sola operación?',
     options: [
-      { text: 'Máximo entre el 0.5% y el 1.5% de mi capital.', score: 3 },
-      { text: 'Entre el 3% y el 5%, dependiendo de qué tan seguro me sienta.', score: 1 },
-      { text: 'Más del 10% o uso lotajes grandes para ganar rápido.', score: 0 }
+      { text: 'Máximo entre el 0.5% y el 1% de mi cuenta, protegiendo mi paz mental.', score: 3 },
+      { text: 'Entre el 2% y el 5%, según qué tan confiado me sienta con el trade.', score: 1 },
+      { text: 'Más del 5% o meto lotajes pesados para intentar salvar el mes rápido.', score: 0 }
     ]
   },
   {
     id: 4,
-    question: '¿Cómo manejas tus emociones (miedo, euforia, impaciencia) al operar?',
+    question: '¿Cómo manejas tu diálogo interno (miedo, euforia, impaciencia)?',
     options: [
-      { text: 'Practico rutinas de calma, acepto la incertidumbre y ejecuto con frialdad.', score: 3 },
-      { text: 'La euforia tras ganar me hace sobreoperar y devolver las ganancias.', score: 1 },
-      { text: 'El miedo a perder me paraliza o me hace cerrar ganancias antes de tiempo.', score: 0 }
+      { text: 'Acepto la incertidumbre, cuido mis pensamientos y ejecuto con disciplina.', score: 3 },
+      { text: 'La euforia al ganar me hace sobreoperar y termino devolviendo todo.', score: 1 },
+      { text: 'El miedo a perder me congela o cierro las ganancias antes de tiempo.', score: 0 }
     ]
   },
   {
     id: 5,
-    question: '¿Llevas una bitácora o diario donde anotas tus emociones y análisis de cada trade?',
+    question: '¿Trabajas a diario en tu desarrollo personal (lectura, hábitos, bitácora)?',
     options: [
-      { text: 'Sí, reviso mis estadísticas y reflexiono sobre mis errores semanalmente.', score: 3 },
-      { text: 'Solo registro las ganancias, casi nunca anoto mis pérdidas ni emociones.', score: 1 },
-      { text: 'No llevo ningún registro.', score: 0 }
+      { text: 'Sí, cuido mi mente y reflexiono sobre mis emociones y decisiones cada semana.', score: 3 },
+      { text: 'Solo me enfoco en los gráficos y gráficos, casi no cuido mi parte mental.', score: 1 },
+      { text: 'No leo ni llevo ningún registro de mis emociones.', score: 0 }
     ]
   }
 ];
 
 export const FAQS = [
   {
-    q: '¿Cómo funcionan las mentorías 1 a 1 con Bryan Sánchez?',
-    a: 'Son sesiones individuales privadas vía Google Meet o Zoom directamente con Bryan. Cada clase dura entre 60 y 75 minutos, adaptadas a tu nivel actual, con análisis de tus gráficos, corrección de errores en vivo y desarrollo de tu psicología.'
+    q: '¿Por qué solo abro 2 cupos para mis mentorías 1 a 1 este mes?',
+    a: 'Porque yo sigo operando los mercados a diario y mi tiempo es muy limitado. No tengo un ejército de tutores ni delego tu formación a nadie más: si entras a mi mentoría, hablarás y te formarás directamente conmigo por WhatsApp y en sesiones privadas individuales. Solo puedo darle este nivel de energía y dedicación a 2 personas.'
   },
   {
-    q: '¿Qué nivel necesito tener para ingresar a las mentorías?',
-    a: 'Aceptamos tanto principiantes que quieren aprender desde cero con bases sólidas sin quemar cuentas, como traders intermedios que tienen conocimientos técnicos pero no logran la consistencia por falta de disciplina y gestión de riesgo.'
+    q: '¿Por qué mi enfoque es 50% Desarrollo Personal y 50% Trading?',
+    a: 'Porque he visto a cientos de personas aprender estrategias técnicas perfectas y seguir perdiendo dinero año tras año por falta de disciplina, impaciencia y creencias de escasez. Cuando cambias quién eres por dentro, cuidas tus pensamientos y adoptas hábitos de alta frecuencia, el trading se vuelve una consecuencia natural y fluida.'
   },
   {
-    q: '¿Cómo es el acompañamiento directo por WhatsApp?',
-    a: 'Tienes contacto directo e individual con Bryan en WhatsApp. Puedes enviarle capturas de tus análisis antes de entrar al mercado, plantear tus dudas y recibir retroalimentación para evitar errores antes de arriesgar capital.'
+    q: '¿La comunidad gratuita es solo para personas que hacen trading?',
+    a: 'No. Es una comunidad de Éxito Integral (Mente, Cuerpo y Alma). Aunque la mayoría nos dedicamos al trading como vehículo financiero, este espacio está abierto para cualquier persona que busque transformar su vida, construir hábitos de acero, reprogramar sus creencias de escasez y alcanzar la verdadera libertad personal.'
   },
   {
-    q: '¿En qué mercados o instrumentos aplica el método?',
-    a: 'El método se fundamenta en acción del precio, estructura de mercado, liquidez y gestión matemática del riesgo, por lo que es aplicable a Forex, Criptomonedas, Índices Bursátiles y Sintéticos.'
+    q: '¿Qué hacemos en mi comunidad gratuita de WhatsApp (+50 personas)?',
+    a: 'Es mi espacio abierto y 100% gratuito. Cada semana nos conectamos en vivo a desglosar el libro "La ciencia de hacerse rico" (el libro que cambió mi vida y la de mis alumnos), realizamos operativas en vivo en mercados reales sin humo explicando el porqué de cada entrada con ratio 1:5, y te comparto mi bitácora y reflexiones diarias.'
   },
   {
-    q: '¿Qué incluye la comunidad gratuita?',
-    a: 'La comunidad gratuita es nuestro espacio abierto donde compartimos análisis de mercado semanales, audios y reflexiones de psicotrading, rutinas matutinas de mentalidad, libros recomendados y sesiones periódicas de preguntas.'
+    q: '¿Qué es el futuro proyecto de Skool y retos diarios?',
+    a: 'Es la siguiente etapa de nuestro movimiento: una comunidad exclusiva donde operaremos juntos todos los días en directo y cumpliremos retos diarios de acondicionamiento mental, hábitos saludables y disciplina financiera para transformar vidas de verdad.'
   },
   {
-    q: '¿Cuáles son los métodos de pago disponibles?',
-    a: 'Aceptamos transferencias bancarias internacionales, USDT/Cripto (Binance Pay), PayPal, tarjeta de crédito/débito y métodos locales según tu país de residencia.'
+    q: '¿Cómo nos comunicamos durante la mentoría privada?',
+    a: 'Estarás en contacto directo con mi WhatsApp personal. Me podrás enviar capturas de tus análisis antes de abrir operaciones para que te dé feedback, corrijamos errores antes de que arriesgues tu dinero y resolvamos cualquier duda entre nuestras clases en vivo.'
+  },
+  {
+    q: '¿Qué formas de pago acepto para las mentorías?',
+    a: 'Acepto transferencias bancarias, USDT / Cripto (Binance Pay), PayPal y tarjetas de crédito o débito internacionales. Todos los detalles los coordinamos de forma transparente y directa a través de mi WhatsApp.'
   }
 ];
 
-export const COMMUNITY_BENEFITS = [
-  {
-    title: 'Análisis y Perspectivas Semanales',
-    desc: 'Zonas clave de oferta, demanda y dirección del mercado compartidas directamente por Bryan.'
-  },
-  {
-    title: 'Píldoras Diarias de Psicotrading',
-    desc: 'Audios, reflexiones y recordatorios para mantener la disciplina y no cometer errores emocionales.'
-  },
-  {
-    title: 'Entorno de Crecimiento & Cero Ruido',
-    desc: 'Conéctate con traders comprometidos con el estudio riguroso, alejados de falsas promesas o humo.'
-  },
-  {
-    title: 'Acceso a Clases y Q&A Abiertos',
-    desc: 'Sesiones periódicas en vivo donde Bryan responde dudas operativas y analiza gráficos con la comunidad.'
-  }
-];
+export interface StudentProof {
+  author: string;
+  role: string;
+  badge: string;
+  badgeColor: string;
+  quote: string;
+  subtext: string;
+  isFundingWin?: boolean;
+  image?: string;
+  time?: string;
+}
 
-export const STUDENT_RESOURCES = [
+export const STUDENT_PROOFS: StudentProof[] = [
   {
-    id: 'res-1',
-    title: 'Bitácora & Diario de Psicotrading 2026',
-    type: 'Hoja de Cálculo / Excel',
-    desc: 'Plantilla completa para registrar trades, porcentaje arriesgado, R:R y estado emocional antes y después de cada operación.',
-    badge: 'Esencial'
+    author: 'Lucas Gallardo Trader',
+    role: 'Miembro de mi Comunidad',
+    badge: 'Fase 1 Aprobada en 1 Trade',
+    badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+    quote: 'Hoy me compré una cuenta de fondeo para arrancarla con el reto y ya pasamos Fase 1 en un solo trade y día, estamos en una frecuencia que nunca antes sentí 🔥',
+    subtext: 'Gracias especialmente a Bryan por todo lo que nos enseña y tomarse el tiempo de todo lo que hace.',
+    isFundingWin: true,
+    image: '/testimonios/testimonio_1.png',
+    time: '18:42'
   },
   {
-    id: 'res-2',
-    title: 'Checklist de Pre-Mercado y Auditoría de Entradas',
-    type: 'PDF Guía',
-    desc: 'Paso a paso de 7 puntos que debes verificar en el gráfico antes de presionar el botón de compra o venta.',
-    badge: 'Popular'
+    author: 'Franco Alonso Trader',
+    role: 'Alumno de Mentoría',
+    badge: 'Crecimiento & Frecuencia',
+    badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+    quote: 'Bro y yo lo feliz que me siento de formar parte de tu comunidad y escucharte. Cada llamada supera a la anterior. Muy buena clase y muy buena la frecuencia en la que nos encontramos¡¡',
+    subtext: 'Todo gracias al genio de Bryan, gracias hermano por todo 💪💪',
+    image: '/testimonios/testimonio_2.png',
+    time: '21:15'
   },
   {
-    id: 'res-3',
-    title: 'Manual de Gestión Asimétrica del Riesgo',
-    type: 'Documento PDF',
-    desc: 'Cómo mantener una esperanza matemática positiva incluso con una tasa de acierto del 40% al 50%.',
-    badge: 'Gestión'
+    author: 'Juanse Trader',
+    role: 'Miembro de mi Comunidad',
+    badge: 'Mentalidad & Enfoque',
+    badgeColor: 'bg-sky-500/20 text-sky-300 border-sky-500/40',
+    quote: 'Accionemos como la persona que queremos ser, NO nos validemos con el resultado 💪💪 Y cuidemos nuestros pensamientos.',
+    subtext: 'Continuemos en el desarrollo y en el proceso 🔥 no dejemos de combatir los puntos débiles que nos alejan de los RESULTADOS.',
+    image: '/testimonios/testimonio_3.png',
+    time: '14:08'
   },
   {
-    id: 'res-4',
-    title: 'Las 10 Reglas de Oro de Bryan Sánchez',
-    type: 'Póster de Mentalidad',
-    desc: 'Los principios de disciplina innegociables para pegar en tu espacio de trabajo y reprogramar tus hábitos diarios.',
-    badge: 'Mentalidad'
+    author: 'Compañero Fondeado',
+    role: 'Alumno de Mentoría',
+    badge: 'Fondeo Confirmado',
+    badgeColor: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+    quote: 'Fondeado colegas después de 1 año y 2 meses... logré fondearme con el método y la constancia de este grupo.',
+    subtext: 'Muchísimo valor hay acá... poder desarrollar esta habilidad en un entorno tan correcto y con personas de alta vibración.',
+    image: '/testimonios/testimonio_4.png',
+    time: '10:30'
+  },
+  {
+    author: 'Alexandra Trader',
+    role: 'Comunidad Oficial',
+    badge: 'Educación Sin Humo',
+    badgeColor: 'bg-purple-500/20 text-purple-300 border-purple-500/40',
+    quote: 'Repito para este grupo: lo que Bryan nos está dando aquí gratis vale miles de dólares. Esta información aprovechémosla al máximo.',
+    subtext: 'Aprovechen toda la información de CALIDAD que Bryan nos da, no existen personas que lo hagan GRATIS realmente y de tanto valor.',
+    image: '/testimonios/testimonio_5.png',
+    time: '16:54'
+  },
+  {
+    author: 'Alumno en Formación',
+    role: 'Transformación de Vida',
+    badge: 'Guion de Vida & Enfoque',
+    badgeColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+    quote: 'Te cuento que recién escribí el guion de vida que nos dijiste a lujo y detalle... es increíble lo que pasa por mi cuerpo, un estado de frecuencia tan alto que ya me siento esa persona.',
+    subtext: 'Con todo lo que estamos haciendo con el grupo literal no soy el mismo. Me siento tan diferente y con claridad total.',
+    image: '/testimonios/testimonio_6.png',
+    time: '23:19'
   }
 ];

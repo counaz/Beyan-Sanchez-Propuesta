@@ -1,30 +1,39 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { Pillars } from './components/Pillars';
-import { PricingPlans } from './components/PricingPlans';
 import { FreeCommunity } from './components/FreeCommunity';
+import { StudentTestimonials } from './components/StudentTestimonials';
+import { PricingPlans } from './components/PricingPlans';
+import { Pillars } from './components/Pillars';
 import { VideoSection } from './components/VideoSection';
 import { MindsetAssessment } from './components/MindsetAssessment';
 import { RiskCalculator } from './components/RiskCalculator';
-import { ResourceVault } from './components/ResourceVault';
-import { GoogleDriveVault } from './components/GoogleDriveVault';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
-import { MentorshipModal } from './components/MentorshipModal';
 import { CommunityModal } from './components/CommunityModal';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { TRADING_PLANS, getWhatsAppUrl } from './data/content';
 
 export default function App() {
-  const [mentorshipModalOpen, setMentorshipModalOpen] = useState(false);
   const [communityModalOpen, setCommunityModalOpen] = useState(false);
-  const [selectedPlanId, setSelectedPlanId] = useState<string>('bimensual');
 
+  // Directly launches WhatsApp with the chosen plan info - ZERO form friction!
   const handleOpenMentorship = (planId?: string) => {
     if (planId) {
-      setSelectedPlanId(planId);
+      const plan = TRADING_PLANS.find((p) => p.id === planId) || TRADING_PLANS[1];
+      const message = `¡Hola Bryan! Vengo de tu web. Vi que solo abres 2 cupos para tu mentoría 1 a 1 este mes y me quiero postular directamente contigo para el ${plan.name} ($${plan.priceUSD} USD - ${plan.duration}, ${plan.classesCount}). ¿Aún te queda cupo disponible para coordinar mi inicio?`;
+      window.open(getWhatsAppUrl(message), '_blank', 'noopener,noreferrer');
+      return;
     }
-    setMentorshipModalOpen(true);
+
+    // If no plan is preselected, scroll smoothly to the plans section
+    const el = document.getElementById('planes');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      const generalMessage = '¡Hola Bryan! Vengo de tu web. Vi que solo abres 2 cupos para tu mentoría 1 a 1 este mes y me interesa postularme contigo. ¿Aún te queda cupo disponible?';
+      window.open(getWhatsAppUrl(generalMessage), '_blank', 'noopener,noreferrer');
+    }
   };
 
   const handleOpenCommunity = () => {
@@ -40,48 +49,46 @@ export default function App() {
       />
 
       <main>
-        {/* Hero Section */}
+        {/* 1. Hero Section - Hook, WhatsApp CTA, 2-spots scarcity banner, +50 members */}
         <Hero
           onOpenCommunityModal={handleOpenCommunity}
           onOpenMentorshipModal={() => handleOpenMentorship()}
         />
 
-        {/* 4 Pillars of Success & WhatsApp Accompaniment */}
-        <Pillars
-          onOpenMentorshipModal={() => handleOpenMentorship()}
-        />
-
-        {/* 1-on-1 Mentorship Programs (Mensual, Bimensual, Trimestral) */}
-        <PricingPlans
-          onSelectPlan={(planId) => handleOpenMentorship(planId)}
-        />
-
-        {/* Free Community Hub */}
+        {/* 2. Free WhatsApp Community Hub - The primary funnel destination */}
         <FreeCommunity
           onJoinClick={handleOpenCommunity}
         />
 
-        {/* Bryan Sánchez Video Masterclass */}
+        {/* 3. Real Student Testimonials & Funding Proofs */}
+        <StudentTestimonials
+          onOpenCommunityModal={handleOpenCommunity}
+          onOpenMentorshipModal={() => handleOpenMentorship()}
+        />
+
+        {/* 4. 1-on-1 Mentorship Programs - Strictly 2 spots left, direct WhatsApp with plan info */}
+        <PricingPlans
+          onSelectPlan={(planId) => handleOpenMentorship(planId)}
+        />
+
+        {/* 5. 4 Pillars of Success (Trading + Desarrollo Personal) */}
+        <Pillars
+          onOpenMentorshipModal={() => handleOpenMentorship()}
+        />
+
+        {/* 6. Bryan Sánchez Video Masterclass - Proof & Authority */}
         <VideoSection />
 
-        {/* Interactive Mindset Assessment Test */}
+        {/* 7. Interactive Mindset Assessment Test */}
         <MindsetAssessment
           onOpenCommunityModal={handleOpenCommunity}
           onOpenMentorshipModal={handleOpenMentorship}
         />
 
-        {/* Mathematical Risk Calculator */}
+        {/* 8. Mathematical Risk Calculator Ratio 1:5 */}
         <RiskCalculator />
 
-        {/* Downloadable / Student Resource Vault */}
-        <ResourceVault
-          onOpenCommunityModal={handleOpenCommunity}
-        />
-
-        {/* Google Drive Integration Vault */}
-        <GoogleDriveVault />
-
-        {/* FAQ Section */}
+        {/* 9. FAQ Section */}
         <FAQ
           onOpenMentorshipModal={() => handleOpenMentorship()}
         />
@@ -98,13 +105,7 @@ export default function App() {
         onOpenMentorshipModal={() => handleOpenMentorship()}
       />
 
-      {/* Modals */}
-      <MentorshipModal
-        isOpen={mentorshipModalOpen}
-        onClose={() => setMentorshipModalOpen(false)}
-        defaultPlanId={selectedPlanId}
-      />
-
+      {/* Free Community WhatsApp Welcome Modal */}
       <CommunityModal
         isOpen={communityModalOpen}
         onClose={() => setCommunityModalOpen(false)}

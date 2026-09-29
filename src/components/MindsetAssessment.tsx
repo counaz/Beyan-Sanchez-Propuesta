@@ -181,7 +181,7 @@ export const MindsetAssessment: React.FC<MindsetAssessmentProps> = ({
                   className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>Postular a Mentoría 1 a 1</span>
+                  <span>Postular a Mentoría (Solo 2 Cupos)</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
 

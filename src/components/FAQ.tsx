@@ -69,15 +69,15 @@ export const FAQ: React.FC<FAQProps> = ({ onOpenMentorshipModal }) => {
             ¿Tienes alguna duda específica sobre tu caso?
           </h3>
           <p className="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto">
-            Escríbele directamente a Bryan Sánchez por WhatsApp para evaluar si las mentorías 1 a 1 son el programa adecuado para tus metas actuales.
+            Escríbeme directamente por WhatsApp para conocernos, evaluar tu situación actual y ver si mis mentorías privadas 1 a 1 son el camino correcto para ti.
           </p>
           <div>
             <button
               onClick={onOpenMentorshipModal}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm shadow-lg shadow-emerald-500/20 transition-all cursor-pointer"
             >
-              <MessageCircle className="w-4 h-4" />
-              <span>Chatear por WhatsApp con Bryan</span>
+              <MessageCircle className="w-4 h-4 fill-slate-950" />
+              <span>Hablar directamente conmigo por WhatsApp</span>
             </button>
           </div>
         </div>
