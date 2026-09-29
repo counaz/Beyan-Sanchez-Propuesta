@@ -55,9 +55,9 @@ export const Hero: React.FC<HeroProps> = ({
         {/* Main Headings */}
         <div className="text-center max-w-4xl mx-auto space-y-4 sm:space-y-5">
           <h1 className="font-cinzel text-3xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
-            CLASES DE <span className="gold-gradient-text block sm:inline">TRADING</span>
-            <span className="block text-xl sm:text-3xl lg:text-4xl font-sans font-bold text-slate-200 mt-1 sm:mt-2">
-              & MENTORÍAS 1 A 1
+            MÁS VIDA PARA TODOS <span className="gold-gradient-text block sm:inline">Y MENOS PARA NINGUNA</span>
+            <span className="block text-lg sm:text-2xl lg:text-3xl font-sans font-bold text-slate-200 mt-2 sm:mt-3 tracking-wide">
+              CLASES DE TRADING & MENTORÍAS 1 A 1
             </span>
           </h1>
 
