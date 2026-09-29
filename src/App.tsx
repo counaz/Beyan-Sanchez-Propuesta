@@ -32,7 +32,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080a0f] text-slate-100 selection:bg-amber-500/30 selection:text-amber-200">
+    <div className="min-h-screen bg-[#080a0f] text-slate-100 selection:bg-amber-500/30 selection:text-amber-200 overflow-x-hidden">
       {/* Top Header Navigation */}
       <Navbar
         onOpenCommunityModal={handleOpenCommunity}
