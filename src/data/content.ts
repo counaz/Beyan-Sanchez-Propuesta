@@ -1,4 +1,5 @@
 export const BRYAN_WHATSAPP_NUMBER = '56957082496';
+export const COMMUNITY_INVITE_URL = 'https://chat.whatsapp.com/BQhBLZTz8OF6UN3HEGm2nX';
 
 export const getWhatsAppUrl = (message: string) => {
   return `https://wa.me/${BRYAN_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -111,7 +112,7 @@ export const CORE_PILLARS = [
   {
     icon: 'Award',
     title: 'LIBERTAD & TRANSFORMACIÓN REAL',
-    subtitle: 'Más vida para todos y menos para ninguna.',
+    subtitle: 'Más vida para todos y menos para ninguno.',
     description: 'El dinero es solo un vehículo para comprar tiempo y paz mental con tu familia. Buscamos un proceso sostenible que te dé libertad duradera, no un golpe de suerte pasajero.'
   }
 ];

@@ -51,7 +51,7 @@ export const Hero: React.FC<HeroProps> = ({
         {/* Main Headings - Original Large Cinematic Typography */}
         <div className="text-center max-w-5xl lg:max-w-6xl mx-auto space-y-4 sm:space-y-6">
           <h1 className="font-cinzel text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight text-white leading-tight">
-            MÁS VIDA PARA TODOS <span className="gold-gradient-text block sm:inline">Y MENOS PARA NINGUNA</span>
+            MÁS VIDA PARA TODOS <span className="gold-gradient-text block sm:inline">Y MENOS PARA NINGUNO</span>
             <span className="block text-xl sm:text-2xl lg:text-3xl font-sans font-bold text-slate-200 mt-3 sm:mt-4 tracking-wide">
               ÉXITO INTEGRAL, CAMBIO DE VIDA & TRADING 1 A 1
             </span>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Users, MessageCircle, CheckCircle2, Sparkles, ArrowRight, BookOpen, Flame, Heart } from 'lucide-react';
-import { getWhatsAppUrl } from '../data/content';
+import { getWhatsAppUrl, COMMUNITY_INVITE_URL } from '../data/content';
 
 interface FreeCommunityProps {
   onJoinClick: () => void;
@@ -107,13 +107,13 @@ export const FreeCommunity: React.FC<FreeCommunityProps> = ({ onJoinClick }) => 
               {/* Action Button with +50 persons indicator (NO visible phone numbers) */}
               <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <a
-                  href={whatsappUrl}
+                  href={COMMUNITY_INVITE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-emerald-500 via-emerald-400 to-emerald-500 hover:from-emerald-400 hover:to-emerald-300 text-slate-950 font-black text-sm sm:text-base shadow-xl shadow-emerald-500/30 transition-all flex items-center justify-center gap-2.5 cursor-pointer shrink-0"
                 >
                   <MessageCircle className="w-5 h-5 fill-slate-950" />
-                  <span>ENTRAR A MI COMUNIDAD POR WHATSAPP</span>
+                  <span>UNIRME AUTOMÁTICAMENTE AL GRUPO</span>
                   <ArrowRight className="w-4 h-4" />
                 </a>
 
@@ -195,7 +195,7 @@ export const FreeCommunity: React.FC<FreeCommunityProps> = ({ onJoinClick }) => 
 
                 <div className="pt-2 text-center border-t border-slate-800/80">
                   <p className="text-[11px] text-amber-300/90 font-medium italic">
-                    "Más vida para todos y menos para ninguna." — Bryan Sánchez
+                    "Más vida para todos y menos para ninguno." — Bryan Sánchez
                   </p>
                 </div>
 

@@ -122,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-slate-500 text-[11px]">
-          <p>© {new Date().getFullYear()} Bryan Sánchez. "Más vida para todos y menos para ninguna".</p>
+          <p>© {new Date().getFullYear()} Bryan Sánchez. "Más vida para todos y menos para ninguno".</p>
           <div className="flex items-center gap-1.5 text-slate-400">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
             <span>Atención personal y directa conmigo por WhatsApp</span>
